@@ -78,7 +78,7 @@ export const ImageGetter: React.FC = () => {
                 className="upload-button"
                 onClick={() => setOpened(!opened)}
             >
-                Загрузить GeoTIFF
+                Распознать полигоны
             </button>
 
             {opened &&
