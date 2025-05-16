@@ -1,0 +1,31 @@
+@use '../../../assets/css/colors.scss';
+
+$scale-radius: 14px;
+$scale-block-size: 48px;
+$scale-vertical-padding: 24px;
+$scale-line-height: 2px;
+
+$scale-switch-line: 6px;
+$scale-switch-width: 60px;
+$scale-switch-height: 40px;
+$scale-switch-radius: 8px;
+
+.scale {
+    width: $scale-block-size;
+    padding: $scale-vertical-padding 0;
+    display: grid;
+    grid-template-rows: $scale-block-size $scale-block-size $scale-block-size $scale-block-size;
+    border-radius: $scale-radius;
+    position: relative;
+    background-color: colors.$background-color;
+
+    &-switch {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        border: $scale-switch-line solid colors.$base-color;
+        border-radius: $scale-switch-radius;
+        width: $scale-switch-width;
+        height: $scale-switch-height;
+    }
+}

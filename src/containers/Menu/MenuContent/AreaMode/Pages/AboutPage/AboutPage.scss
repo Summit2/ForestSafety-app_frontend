@@ -1,0 +1,26 @@
+$aboutpage-gap: 16px;
+
+.aboutpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: $aboutpage-gap;
+
+    &-report {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: $aboutpage-gap;
+    }
+
+    &-points {
+        display: grid;
+        row-gap: 6px;
+
+        &-unit {
+            display: flex;
+            justify-content: start;
+            gap: 10px;
+        }
+    }
+}

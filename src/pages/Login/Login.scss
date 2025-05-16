@@ -1,0 +1,42 @@
+@use '@assets/css/colors.scss';
+
+$form-width: 400px;
+$form-gap: 25px;
+$login-page-gap: 20px;
+
+.login-page {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: $login-page-gap;
+    background-color: colors.$background-color;
+
+    form {
+        margin: 0 auto;
+        display: grid;
+        flex-direction: column;
+        gap: $form-gap;
+
+        @media screen and (min-width: 441px) {
+            width: $form-width;
+        }
+    
+        @media screen and (max-width: 440px) {
+            width: 80%;
+        }
+
+        button span {
+            text-align: center;
+            width: 100%;
+        }
+
+        div {
+            text-align: center;
+        }
+    }
+}

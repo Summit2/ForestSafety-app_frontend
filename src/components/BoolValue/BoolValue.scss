@@ -1,0 +1,21 @@
+$boolvalue-gap: 12px;
+
+.boolvalue {
+    display: flex;
+    gap: $boolvalue-gap;
+    align-content: center;
+    align-items: center;
+
+    &-base {
+        justify-content: space-between;
+
+        .boolvalue-text {
+            flex: 1;
+        }
+    }
+
+    &-small {
+        justify-content: start;
+        gap: $boolvalue-gap;
+    }
+}

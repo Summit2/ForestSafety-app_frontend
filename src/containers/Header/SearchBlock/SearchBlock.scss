@@ -1,0 +1,19 @@
+@use '@assets/css/colors.scss';
+
+.search-block {
+    position: relative;
+
+    &-results {
+        position: absolute;
+        margin-top: 8px;
+        border: 1px solid colors.$second-color;
+        border-radius: 10px;
+        padding: 16px 16px;
+        width: 100%;
+        background-color: colors.$background-color;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        z-index: 200;
+    }
+}

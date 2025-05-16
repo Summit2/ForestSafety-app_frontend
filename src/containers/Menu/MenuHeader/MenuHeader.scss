@@ -1,0 +1,10 @@
+$menu-header-gap: 20px;
+
+.menu-header {
+    display: flex;
+    width: 100%;
+    gap: $menu-header-gap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}

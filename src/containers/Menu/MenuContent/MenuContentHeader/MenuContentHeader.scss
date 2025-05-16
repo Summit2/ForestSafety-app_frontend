@@ -1,0 +1,16 @@
+$menu-content-header-gap: 16px;
+$menu-content-header-tools-gap: 8px;
+
+.menu-content-header, .menu-content-header-tools {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.menu-content-header {
+    gap: $menu-content-header-gap;
+
+    &-tools {
+        gap: $menu-content-header-tools-gap;
+    }
+}

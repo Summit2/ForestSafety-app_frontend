@@ -1,0 +1,17 @@
+@use '../../assets/css/colors.scss';
+
+$app-line-height: 2px;
+
+.app-line {
+    height: $app-line-height;
+    margin: 0 auto;
+    width: 100%;
+
+    &-gray {
+        background-color: colors.$shadow-color;
+    }
+
+    &-blue {
+        background-color: colors.$second-color;
+    }
+}

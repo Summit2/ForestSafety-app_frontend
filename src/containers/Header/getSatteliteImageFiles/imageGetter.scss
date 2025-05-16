@@ -1,0 +1,39 @@
+.file-upload-block {
+    position: relative;
+    display: inline-block;
+}
+
+.upload-button {
+    padding: 8px 12px;
+    background-color: #E4EFF4;;
+    border: none;
+    color: gray;
+    cursor: pointer;
+    border-radius: 120px;
+    font-family: "Montserrat";
+}
+
+.file-upload-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 10;
+    min-width: 240px;
+}
+
+.file-input {
+    margin-top: 8px;
+}
+
+.selected-files {
+    margin-top: 10px;
+}
+
+.text-danger {
+    color: red;
+}

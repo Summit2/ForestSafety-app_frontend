@@ -1,0 +1,100 @@
+$menu-width: 412px;
+
+.main-page {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 110px 1fr;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 0;
+
+    nav, &-content {
+        width: 100vw;
+    }
+
+    &-content {
+        flex: 1;
+        position: relative;
+        height: 100%;
+
+        .page-tools {
+            width: 0;
+            height: 0;
+
+            &-map-state {
+                @media screen and (min-width: 905px) {
+                    display: none;
+                }
+
+                @media screen and (max-width: 904px) {
+                    position: absolute;
+                    right: 24px;
+                    top: 8px;
+                }
+            }
+
+            &-menu {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+
+                @media screen and (min-width: 565px) {
+                    width: $menu-width;
+                }
+
+                @media screen and (max-width: 564px) {
+                    width: 100%;
+                    z-index: 150;
+                }
+            }
+
+            &-menu-show {
+                left: 0;
+                visibility: visible;
+                transition-timing-function: ease-out;
+                transition-duration: 0.3s;
+
+                @media screen and (min-width: 565px) {
+                    transition-duration: 0.3s;
+                }
+            
+                @media screen and (max-width: 564px) {
+                    transition-duration: 0.5s;
+                }
+            }
+
+            &-menu-hidden {
+                visibility: hidden;
+                transition-timing-function: ease-out;
+
+                @media screen and (min-width: 565px) {
+                    left: -50%;
+                    transition-duration: 0.3s;
+                }
+            
+                @media screen and (max-width: 564px) {
+                    left: -100%;
+                    transition-duration: 0.5s;
+                }
+            }
+
+            &-map {
+                position: absolute;
+                right: 0;
+                padding-right: 30px;
+
+                @media screen and (min-width: 461px) {
+                    top: 100px;
+                }
+            
+                @media screen and (max-width: 460px) {
+                    top: 40%;
+                }
+            }
+        }
+    }
+}
+

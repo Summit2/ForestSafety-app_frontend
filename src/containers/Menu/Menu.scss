@@ -1,0 +1,37 @@
+@use '@assets/css/colors.scss';
+
+$menu-padding-right: 10%;
+$menu-padding-left: 14%;
+$menu-padding-top: 50px;
+$menu-padding-bottom: 8%;
+$menu-gap: 24px;
+
+.menu {
+    width: 100%;
+    background-color: colors.$background-color;
+
+    padding-left: $menu-padding-left;
+    padding-right: $menu-padding-right;
+    padding-bottom: $menu-padding-bottom;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: $menu-gap;
+
+    @media screen and (min-width: 565px) {
+        height: 100%;
+        position: relative;
+        padding-top: $menu-padding-top;
+    }
+
+    @media screen and (max-width: 564px) {
+        height: 100svh;
+        position: absolute;
+        top: -110px;
+        left: 0;
+        padding-top: calc(#{$menu-padding-top} + 40px);
+    }
+}

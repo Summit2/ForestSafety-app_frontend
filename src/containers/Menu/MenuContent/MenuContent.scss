@@ -1,0 +1,35 @@
+@use '../../../assets/css/colors.scss';
+
+$menu-content-gap: 32px;
+$menu-content-areamode-gap: 8px;
+
+.menu-content {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: $menu-content-gap;
+    position: relative;
+
+    width: 100%;
+    height: inherit;
+
+    &-areamode {
+        display: flex;
+        flex-direction: column;
+        gap: $menu-content-areamode-gap;
+        width: 100%;
+    }
+
+    &-add {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        button {
+            width: fit-content;
+        }
+
+        .add-text {
+            margin-top: 8px;
+        }
+    }
+}

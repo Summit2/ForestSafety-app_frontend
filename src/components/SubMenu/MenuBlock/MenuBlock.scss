@@ -1,0 +1,16 @@
+$menublock-gap: 10px;
+$menublock-padding-vertical: 8px;
+$menublock-text-margin-hor: 12px;
+
+.menublock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: $menublock-gap;
+    padding: $menublock-padding-vertical 0;
+    cursor: pointer;
+
+    &-text {
+        margin: 0 $menublock-text-margin-hor;
+    }
+}

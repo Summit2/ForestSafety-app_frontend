@@ -1,0 +1,14 @@
+.polygon-point {
+    display: grid;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+    grid-template-columns: 80px 80px 27px 27px 1fr;
+    gap: 8px;
+
+    margin-bottom: 8px;
+
+    button {
+        width: fit-content;
+    }
+}

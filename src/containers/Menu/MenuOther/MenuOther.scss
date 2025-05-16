@@ -1,0 +1,14 @@
+$menu-other-top: 10px;
+$menu-other-horizontal: 10px;
+
+.menu-other {
+    position: absolute;
+    top: $menu-other-top;
+    left: $menu-other-horizontal;
+    right: $menu-other-horizontal;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: flex-end;
+}

@@ -1,0 +1,20 @@
+@use '@assets/css/colors.scss';
+
+$map-state-padding: 12px;
+$map-state-border-radius: 12px;
+$map-state-gap: 12px;
+
+.map-state {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: $map-state-gap;
+    padding: $map-state-padding;
+
+    @media screen and (min-width: 905px) {
+        background-color: colors.$background-color;
+        border-radius: $map-state-border-radius;
+    }
+}

@@ -1,0 +1,86 @@
+@use '../../assets/css/colors.scss';
+@use '../../assets/css/sizes.scss';
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../assets/fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+.h1, .h2, .h3, .text, .bold-text, .small-text, .text-link {
+    font-family: 'Montserrat';
+}
+
+.h1, .h2, .h3, .bold-text {
+    font-weight: bold;
+}
+
+.h1 {
+    font-size: sizes.$text-h1;
+}
+
+.h2 {
+    font-size: sizes.$text-h2;
+}
+
+.h3 {
+    font-size: sizes.$text-h3;
+}
+
+.text {
+    font-size: sizes.$text;
+}
+
+.bold-text {
+    font-size: sizes.$text;
+}
+
+.text-link {
+    font-size: sizes.$text;
+    color: colors.$base-color;
+    text-decoration: underline;
+}
+
+.text-help-link:hover {
+    color: colors.$link-text-color;
+    cursor: pointer;   
+}
+
+.small-text {
+    font-size: sizes.$text-small;
+    color: colors.$other-text-color;
+}
+
+.base {
+    color: colors.$base-text-color;
+}
+
+.gray {
+    color: colors.$gray-text-color;
+}
+
+.other {
+    color: colors.$other-text-color;
+}
+
+.header {
+    color: colors.$header-text-color;
+}
+
+.link {
+    color: colors.$link-text-color;
+}
+
+.error {
+    color: colors.$accent-color;
+    cursor: pointer;
+}
+
+.inherit {
+    color: inherit;
+}

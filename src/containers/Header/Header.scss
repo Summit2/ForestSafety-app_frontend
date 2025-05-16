@@ -1,0 +1,85 @@
+@use '../../assets/css/colors.scss';
+
+$header-height: 110px;
+$header-horizontal-padding: 32px;
+$header-tools-gap: 24px;
+
+.header {
+
+    &-big {
+        @media screen and (max-width: 565px) {
+            display: none;
+        }
+
+        @media screen and (min-width: 564px) {
+            box-sizing: border-box;
+            width: 100%;
+            height: $header-height;
+            padding-left: $header-horizontal-padding;
+            padding-right: $header-horizontal-padding;
+            background-color: colors.$background-color;
+            position: relative;
+            
+            z-index: 150;
+
+            display: flex;
+            justify-content: space-between;
+
+            &-left, &-right {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                align-content: center;
+            }
+
+            &-left {
+                gap: $header-horizontal-padding;
+                width: calc(412px - 2 * #{$header-horizontal-padding});
+
+                div {
+                    flex: 1;
+                }
+            }
+
+            &-right {
+                gap: $header-tools-gap;
+
+                .map-state {
+                    @media screen and (max-width: 904px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &-small {
+        @media screen and (min-width: 565px) {
+            display: none;
+        }
+
+        @media screen and (max-width: 564px) {
+            display: grid;
+            justify-content: space-between;
+            column-gap: 12px;
+            align-items: center;
+            align-content: center;
+            width: 100%;
+
+            box-sizing: border-box;
+            width: 100%;
+            height: $header-height;
+            padding-left: $header-horizontal-padding;
+            padding-right: $header-horizontal-padding;
+            background-color: colors.$background-color;
+        }
+
+        @media screen and (max-width: 400px) {
+            grid-template-columns: 35px 200px 40px;
+        }
+
+        @media screen and (min-width: 401px) and (max-width: 564px) {
+            grid-template-columns: 35px 250px 40px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+$icon-button-small-height: 24px;
+$icon-button-30size: 30px;
+
+.icon-button {
+    &-small {
+        height: $icon-button-small-height;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &-30size {
+        height: $icon-button-30size;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

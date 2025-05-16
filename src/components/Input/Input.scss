@@ -1,0 +1,54 @@
+@use '../../assets/css/colors.scss';
+@use '../../assets/css/sizes.scss';
+
+.base-input, .password-input, .search-input {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: colors.$base-text-color;
+    border-radius: sizes.$border-radius-component;
+    padding: sizes.$padding-vertical sizes.$padding-horizontal;
+
+    ::placeholder {
+        color: colors.$other-text-color;
+    }
+
+    input {
+        flex: 1;
+        width: 100%;
+    }
+}
+
+.base-input, .password-input {
+    background-color: colors.$background-color;
+    border: 1px solid colors.$shadow-color;
+
+    &:focus, &:focus-within {
+        border: 1px solid colors.$other-text-color;
+    }
+}
+
+.search-input, .password-input {
+    display: flex;
+    gap: 10px;
+}
+
+.search-input {
+    background-color: colors.$component-color;
+    border: 1px solid colors.$component-color;
+
+    &:focus, &:focus-within {
+        border: 1px solid colors.$second-color;
+    }
+}
+
+.password-input {
+    &-icon {
+        height: 23px;
+        width: 23px;
+    }
+}
+
+.search-icon {
+    width: 24px;
+}

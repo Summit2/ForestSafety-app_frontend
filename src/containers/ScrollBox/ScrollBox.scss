@@ -1,0 +1,60 @@
+@use '../../assets/css/colors.scss';
+
+$scrollbar-width: 10px;
+$scrollbar-content-gap: 12px;
+$gradient-height: 60px;
+
+.scroll-box {
+    flex: 1;
+    position: relative;
+
+    &-content {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: fit-content;
+        min-width: 100%;
+
+        --left-value: calc((#{$scrollbar-width} + #{$scrollbar-content-gap}) * -1);
+        left: var(--left-value);
+
+        display: flex;
+        flex-direction: column;
+
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        direction: rtl;
+
+        gap: $scrollbar-content-gap;
+        padding-left: $scrollbar-content-gap;
+
+        padding-bottom: $gradient-height;
+
+        * {
+            direction: ltr;
+        }
+
+        &::-webkit-scrollbar {
+            width: $scrollbar-width;
+            background-color: colors.$light-shadow-color;
+
+            &-thumb {
+                background-color: colors.$shadow-color;
+            }
+        }
+    }
+
+    &-gradient {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: $gradient-height;
+        background: linear-gradient(0deg, 
+            colors.$background-color 0%, 
+            colors.$background-color 30%, 
+            rgba(255,255,255,0) 100%);
+        pointer-events: none;
+    }
+}

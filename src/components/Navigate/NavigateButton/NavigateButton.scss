@@ -1,0 +1,46 @@
+@use '@assets/css/colors.scss';
+
+.navigatebutton {
+    background-color: colors.$background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    @media screen and (min-width: 730px) {
+        $navigatebutton-width: 53px;
+        $navigatebutton-height: 42px;
+        $navigatebutton-border-radius: 26px;
+
+        width: $navigatebutton-width;
+        height: $navigatebutton-height;
+        border-radius: $navigatebutton-border-radius $navigatebutton-border-radius 0 0;
+    }
+
+    @media screen and (max-width: 729px) {
+        $navigatebutton-width: 40px;
+        $navigatebutton-height: 32px;
+        $navigatebutton-border-radius: 20px;
+
+        width: $navigatebutton-width;
+        height: $navigatebutton-height;
+        border-radius: $navigatebutton-border-radius $navigatebutton-border-radius 0 0;
+
+        img {
+            height: 16px;
+            width: 24px;
+        }
+    }
+
+    &-right {
+        transform: rotate(90deg);
+    }
+
+    &-bottom {
+        transform: rotate(180deg);
+    }
+
+    &-left {
+        transform: rotate(270deg);
+    }
+}

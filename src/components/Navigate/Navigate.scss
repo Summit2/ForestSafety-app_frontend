@@ -1,0 +1,145 @@
+@use '@assets/css/colors.scss';
+
+.navigate {
+
+    @media screen and (min-width: 461px) {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 460px) {
+        display: none;
+    }
+
+    &-shadow {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        &-vblock, &-hblock {
+            position: absolute;
+        }
+
+        &-vblock {
+            height: 100%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            
+            background-color: colors.$background-color;
+        }
+
+        &-hblock {
+            width: 100%;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+    }
+
+    &-form {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        gap: 0;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        
+        &-block {
+            display: grid;
+            align-items: center;
+            align-content: center;
+            margin: 0 auto;
+            padding: 0;
+            height: 100%;
+
+            div {
+                display: flex;
+                height: 100%;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                position: relative;
+
+                button {
+                    position: absolute;
+                }
+            }
+        }
+
+        &-middle {
+            background-color: colors.$background-color;
+        }
+    }
+
+    @media screen and (min-width: 730px) {
+        $navigate-size: 137px;
+        $navigate-form-width: 53px;
+        $navigate-form-height: 42px;
+        $navigate-radius: 26px;
+
+        width: $navigate-size;
+        height: $navigate-size;
+
+        &-shadow {
+            &-vblock {
+                width: $navigate-form-width;
+                border-radius: $navigate-radius;
+            }
+    
+            &-hblock {
+                height: $navigate-form-width;
+                border-radius: $navigate-radius;
+            }
+        }
+
+        &-form {
+            grid-template-rows: $navigate-form-height $navigate-form-width $navigate-form-height;
+
+            &-block {
+                grid-template-columns: $navigate-form-height $navigate-form-width $navigate-form-height;
+            }
+
+            &-middle {
+                border-radius: $navigate-radius;
+            }
+        }
+    }
+
+    @media screen and (max-width: 729px) {
+        $navigate-size: 104px;
+        $navigate-form-width: 40px;
+        $navigate-form-height: 32px;
+        $navigate-radius: 20px;
+
+        width: $navigate-size;
+        height: $navigate-size;
+
+        &-shadow {
+            &-vblock {
+                width: $navigate-form-width;
+                border-radius: $navigate-radius;
+            }
+    
+            &-hblock {
+                height: $navigate-form-width;
+                border-radius: $navigate-radius;
+            }
+        }
+
+        &-form {
+            grid-template-rows: $navigate-form-height $navigate-form-width $navigate-form-height;
+
+            &-block {
+                grid-template-columns: $navigate-form-height $navigate-form-width $navigate-form-height;
+            }
+
+            &-middle {
+                border-radius: $navigate-radius;
+            }
+        }
+    }
+}

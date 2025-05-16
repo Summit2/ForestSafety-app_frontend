@@ -1,0 +1,13 @@
+@use '../../../assets/css/colors.scss';
+
+.setting-menu {
+    position: absolute;
+    bottom: -12px;
+    right: 20px;
+
+    background-color: colors.$background-color;
+    padding: 8px 16px;
+    padding-top: 4px;
+    border-radius: 10px;
+    border: 1px solid colors.$second-color;
+}

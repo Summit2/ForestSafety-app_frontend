@@ -1,0 +1,27 @@
+@use '../../assets/css/colors.scss';
+
+$map-label-border-radius: 9px;
+$map-label-padding: 6px;
+
+.map-label {
+    color: colors.$second-color;
+    border-radius: $map-label-border-radius;
+    padding: $map-label-padding;
+    background: radial-gradient(#FFFFFF, #DFDFDF 200%);
+    cursor: pointer;
+
+    &-blue {
+        border: 1px solid colors.$second-color;
+    }
+
+    &-accent {
+        color: colors.$accent-color;
+        border: 1px solid colors.$accent-color;
+    }
+
+    &-fill-blue {
+        color: colors.$background-color;
+        background: colors.$second-color;
+        border: 1px solid colors.$second-color;
+    }
+}

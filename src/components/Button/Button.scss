@@ -1,0 +1,73 @@
+@use '../../assets/css/colors.scss';
+@use '../../assets/css/sizes.scss';
+
+.button {
+    width: fit-content;
+}
+
+.blue-button, .white-button, .accent-button {
+    display: flex;
+    border-radius: sizes.$border-radius-component;
+}
+
+.blue-button {
+    color: colors.$background-color;
+    background-color: colors.$second-color;
+}
+
+.white-button {
+    color: colors.$base-text-color;
+    background-color: colors.$background-color;
+    border: 1px solid colors.$shadow-color;
+}
+
+.accent-button {
+    color: colors.$background-color;
+    background-color: colors.$accent-color;
+}
+
+.blue-line-button, .white-line-button, .accent-line-button {
+    display: flex;
+    border-radius: sizes.$border-radius-component;
+    background-color: colors.$background-color;
+
+    &:hover {
+        color: colors.$background-color;
+    }
+}
+
+.blue-line-button {
+    color: colors.$second-color;
+    border: 1px solid colors.$second-color;
+
+    &:hover {
+        background-color: colors.$second-color;
+    }
+}
+
+.white-line-button {
+    color: colors.$base-text-color;
+    border: 1px solid colors.$shadow-color;
+
+    &:hover {
+        background-color: colors.$shadow-color;
+        color: colors.$base-text-color;
+    }
+}
+
+.accent-line-button {
+    color: colors.$accent-color;
+    border: 1px solid colors.$accent-color;
+
+    &:hover {
+        background-color: colors.$accent-color;
+    }
+}
+
+.middle-button {
+    padding: sizes.$padding-vertical sizes.$padding-horizontal;
+}
+
+.small-button {
+    padding: sizes.$padding-vertical-small sizes.$padding-horizontal-small;
+}

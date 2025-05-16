@@ -1,0 +1,36 @@
+@use '@assets/css/colors.scss';
+
+.scalebutton {
+    border-radius: 50%;
+    background-color: colors.$background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    @media screen and (min-width: 730px) {
+        $scalebutton-size: 53px;
+        $scalebutton-icon-size: 40px;
+
+        width: $scalebutton-size;
+        height: $scalebutton-size;
+
+        img {
+            width: $scalebutton-icon-size;
+            height: $scalebutton-icon-size;
+        }
+    }
+
+    @media screen and (max-width: 729px) {
+        $scalebutton-size: 40px;
+        $scalebutton-icon-size: 30px;
+
+        width: $scalebutton-size;
+        height: $scalebutton-size;
+
+        img {
+            width: $scalebutton-icon-size;
+            height: $scalebutton-icon-size;
+        }
+    }
+}

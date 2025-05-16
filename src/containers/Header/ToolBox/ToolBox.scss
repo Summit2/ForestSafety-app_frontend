@@ -1,0 +1,11 @@
+$tool-box-padding: 12px;
+$tool-box-border-radius: 12px;
+
+.tool-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: $tool-box-padding;
+    border-radius: $tool-box-border-radius;
+}

@@ -1,0 +1,19 @@
+$tree-label-content-gap: 8px;
+
+.tree-label {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    &-content, &-content-text {
+        display: flex;
+        justify-content: flex-start;
+        gap: $tree-label-content-gap;
+    }
+
+    &-content-text {
+        flex-direction: column;
+    }
+}

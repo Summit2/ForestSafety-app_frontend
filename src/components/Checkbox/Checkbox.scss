@@ -1,0 +1,30 @@
+@use '../../assets/css/colors.scss';
+
+$checkbox-border-radius: 6px;
+$checkbox-size: 24px;
+
+.map-checkbox {
+    border-radius: $checkbox-border-radius;
+    border: 2px solid colors.$base-color;
+    width: $checkbox-size;
+    height: $checkbox-size;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    &-input {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+    }
+}
+
+.map-unchecked {
+    background-color: colors.$background-color;
+}
+
+.map-checked {
+    background-color: colors.$component-color;
+}
