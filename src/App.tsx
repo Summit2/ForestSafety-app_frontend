@@ -21,7 +21,22 @@ import { updatePolygonList } from '@store/features/app';
 import { useGetPolygonsQuery } from '@api/paths/polygonApi';
 import { useSearchParams } from 'react-router-dom';
 
+
+
+//для импорта полигонов
+// import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from './store';
+import server from '@api/mocks/server';
+
 function App() {
+
+  const polygons = useSelector((state: RootState) => state.polygons.polygons);
+
+  useEffect(() => {
+    // alert(JSON.stringify(polygons));
+    server(polygons);
+  }, [polygons]);
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();

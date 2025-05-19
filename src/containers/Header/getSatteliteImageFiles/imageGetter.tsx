@@ -74,8 +74,8 @@ export const ImageGetter: React.FC = () => {
             }
 
             const polygons = await response.json();
-            alert("Координаты полигонов:\n" + JSON.stringify(polygons, null, 2));
-
+            alert("Распознаны полигоны:\n" + JSON.stringify(polygons, null, 2));
+            console.log("Распознаны полигоны:\n" + JSON.stringify(polygons, null, 2));
             dispatch(addPolygon(polygons)); // добавляем новые полигоны
         } catch (err: any) {
             setError(err.message || "Неизвестная ошибка.");

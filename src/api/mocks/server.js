@@ -18,10 +18,11 @@ export default function (initialPolygons = []) {
         seeds(server) {
             let polygonShema = [];
             
-            alert(initialPolygons)
-            // initialPolygons.forEach((polygon) => {
-            //     polygonShema.push(server.create('polygon', { ...polygon }));
-            // });
+            console.log("Добавление первоначальных полигонов")
+            console.log(initialPolygons)
+            initialPolygons.forEach((polygon) => {
+                polygonShema.push(server.create('polygon', { ...polygon }));
+            });
             polygonData.forEach((polygon) => {
                 polygonShema.push(server.create('polygon', { ...polygon }));
             });

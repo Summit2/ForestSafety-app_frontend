@@ -9,10 +9,10 @@ import { useSelector } from 'react-redux';
 import { RootState } from './store';
 
 import server from "@api/mocks/server";
-alert('SDSDD')
-const polygons = useSelector((state: RootState) => state.polygons.polygons);
-alert(polygons)
-server(polygons);
+
+// const polygons = useSelector((state: RootState) => state.polygons.polygons);
+// alert(polygons)
+// server(polygons);
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
