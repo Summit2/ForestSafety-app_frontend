@@ -3,11 +3,19 @@ import './imageGetter.scss';
 
 import { Text } from "@components/base";
 
+import { useDispatch } from 'react-redux';
+import { addPolygon } from "@store/polygonsSlice"; //для добавления полигонов
+
+
 export const ImageGetter: React.FC = () => {
     const [opened, setOpened] = useState(false);
     const [files, setFiles] = useState<FileList | null>(null);
     const [error, setError] = useState<string | null>(null);
     const ref = useRef<HTMLDivElement | null>(null);
+
+
+    const dispatch = useDispatch();//для добавления полигонов
+
 
     const handleOutsideClick = (e: MouseEvent | TouchEvent) => {
         if (
@@ -67,6 +75,8 @@ export const ImageGetter: React.FC = () => {
 
             const polygons = await response.json();
             alert("Координаты полигонов:\n" + JSON.stringify(polygons, null, 2));
+
+            dispatch(addPolygon(polygons)); // добавляем новые полигоны
         } catch (err: any) {
             setError(err.message || "Неизвестная ошибка.");
         }

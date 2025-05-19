@@ -1,11 +1,14 @@
 import { createServer, Model, Response } from 'miragejs'
 
 import { polygonData, userData } from './data';
+// import { useSelector } from 'react-redux';
+// import { RootState } from '../../store';
+
 const sign = require('jwt-encode');
 
 export const keyName = 'Token';
 
-export default function () {
+export default function (initialPolygons = []) {
     createServer({
         models: {
             polygon: Model,
@@ -14,6 +17,11 @@ export default function () {
 
         seeds(server) {
             let polygonShema = [];
+            
+            alert(initialPolygons)
+            // initialPolygons.forEach((polygon) => {
+            //     polygonShema.push(server.create('polygon', { ...polygon }));
+            // });
             polygonData.forEach((polygon) => {
                 polygonShema.push(server.create('polygon', { ...polygon }));
             });

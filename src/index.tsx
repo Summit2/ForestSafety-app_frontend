@@ -5,10 +5,14 @@ import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { store } from './store';
 import App from './App';
 import './index.css';
+import { useSelector } from 'react-redux';
+import { RootState } from './store';
 
 import server from "@api/mocks/server";
-
-server();
+alert('SDSDD')
+const polygons = useSelector((state: RootState) => state.polygons.polygons);
+alert(polygons)
+server(polygons);
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
