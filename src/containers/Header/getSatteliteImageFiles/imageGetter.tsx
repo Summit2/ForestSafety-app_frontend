@@ -8,6 +8,7 @@ import { Text } from "@components/base";
 import { useDispatch } from 'react-redux';
 import { addPolygon } from "@store/polygonsSlice"; //для добавления полигонов
 
+import { useAddPolygonMutation } from "@api/paths/polygonApi";
 
 export const ImageGetter: React.FC = () => {
     const [opened, setOpened] = useState(false);
@@ -38,6 +39,8 @@ export const ImageGetter: React.FC = () => {
         const name = file.name.toLowerCase();
         return name.endsWith('.tif') || name.endsWith('.tiff');
     };
+
+    const [ addPolygon ] = useAddPolygonMutation();
 
     const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const selectedFiles = e.target.files;
@@ -83,12 +86,13 @@ export const ImageGetter: React.FC = () => {
                 console.log(element)
                 // console.log(element.points)
                 const newPolygon = {
-                    id: String(Date.now()), // Явное указание ID
+                    // id: String(Date.now()), // Явное указание ID
                     points: element.points,
-                    name: `Новый полигон ${Date.now().toString().slice(-4)}`,
+                    name: `Новый полигон №${Date.now().toString()}`,
                     tree_count: 1
                   };
-                dispatch(addPolygon(newPolygon)); 
+                // dispatch(addPolygon(newPolygon)); 
+                addPolygon({ attrs: newPolygon });
                 // добавляем новые полигоны
             });
             

@@ -1,3 +1,4 @@
+//./store/index.ts
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import Map from './features/map';
 import App from './features/app';
