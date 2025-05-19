@@ -42,9 +42,10 @@ const appSlice = createSlice({
         },
         updatePolygonList(state, action: PayloadAction<{ polygons: Array<polygonDataType> }>) {
             state.menuPolygonListVisible = [];
+            console.log("in updatePolygonList")
             action.payload.polygons.forEach((polygon) => {
                 state.menuPolygonListVisible.push({
-                    polygonId: Number(polygon.id),
+                    polygonId: Number(polygon.id || 0), //!!!
                     polygonName: polygon.name,
                     polygonVisible: true,
                     polygonEnter: false,
@@ -67,6 +68,8 @@ const appSlice = createSlice({
             throw new Error('Области с таким id не существует');
         },
         changePolygonEnterStatus(state, action: PayloadAction<{ polygonId: number, enterStatus: boolean }>) {
+
+            console.log("Привет enterStatus")
             const index = state.menuPolygonListVisible
                 .map((polygon) => polygon.polygonId)
                 .indexOf(action.payload.polygonId);

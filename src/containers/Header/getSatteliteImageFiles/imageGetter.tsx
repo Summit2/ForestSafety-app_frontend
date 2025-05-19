@@ -1,3 +1,5 @@
+//imageGetter.tsx
+
 import React, { useState, useRef, useEffect } from "react";
 import './imageGetter.scss';
 
@@ -76,7 +78,20 @@ export const ImageGetter: React.FC = () => {
             const polygons = await response.json();
             alert("Распознаны полигоны:\n" + JSON.stringify(polygons, null, 2));
             console.log("Распознаны полигоны:\n" + JSON.stringify(polygons, null, 2));
-            dispatch(addPolygon(polygons)); // добавляем новые полигоны
+            // @ts-ignore
+            polygons.forEach(element => {
+                console.log(element)
+                // console.log(element.points)
+                const newPolygon = {
+                    id: String(Date.now()), // Явное указание ID
+                    points: element.points,
+                    name: `Новый полигон ${Date.now().toString().slice(-4)}`,
+                    tree_count: 1
+                  };
+                dispatch(addPolygon(newPolygon)); 
+                // добавляем новые полигоны
+            });
+            
         } catch (err: any) {
             setError(err.message || "Неизвестная ошибка.");
         }

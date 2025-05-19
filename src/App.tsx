@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import './assets/css/index.scss';
 
 import { Main } from '@pages/Main/Main';
+
+
 import { Login } from '@pages/Login/Login';
 import { YMaps } from '@pbe/react-yandex-maps';
 
@@ -31,12 +33,7 @@ import server from '@api/mocks/server';
 
 function App() {
 
-  const polygons = useSelector((state: RootState) => state.polygons.polygons);
-
-  useEffect(() => {
-    // alert(JSON.stringify(polygons));
-    server(polygons);
-  }, [polygons]);
+  
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -47,11 +44,19 @@ function App() {
   const { data = { polygons: [] }, isFetching } = useGetPolygonsQuery();
 
   const demostrationMode = true;
+  const polygonsCurrent = useSelector((state: RootState) => state.polygons.polygons);
 
+  useEffect(() => {
+    // alert(JSON.stringify(polygons));
+    server(polygonsCurrent);
+  }, [polygonsCurrent]);
+  
     useEffect(() => {
         if (!isFetching) {
+           console.log([...data.polygons])
+           console.log(polygonsCurrent)
             dispatch(updatePolygonList({
-                polygons: [...data.polygons],
+                polygons: [...data.polygons], ///!!!
             }));
         }
     }, [isFetching]);

@@ -97,7 +97,8 @@ const dispatch = useAppDispatch();
         if (!polygonId) {
             throw new Error('id области не определен')    
         }
-
+        // alert(data.polygons.map(p => p.id));
+        // alert(areaId);
         const index = data.polygons.map((polygon) => Number(polygon.id)).indexOf(polygonId);
         if (index !== -1) {
             return index;

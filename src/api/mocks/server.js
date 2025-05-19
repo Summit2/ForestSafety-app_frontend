@@ -1,14 +1,18 @@
+//server.js
 import { createServer, Model, Response } from 'miragejs'
 
 import { polygonData, userData } from './data';
 // import { useSelector } from 'react-redux';
-// import { RootState } from '../../store';
+
+import { useSelector } from 'react-redux';
+
 
 const sign = require('jwt-encode');
 
 export const keyName = 'Token';
 
 export default function (initialPolygons = []) {
+
     createServer({
         models: {
             polygon: Model,
@@ -18,14 +22,17 @@ export default function (initialPolygons = []) {
         seeds(server) {
             let polygonShema = [];
             
-            console.log("Добавление первоначальных полигонов")
+            console.log("Добавление первоначальных полигонов в server.js")
             console.log(initialPolygons)
             initialPolygons.forEach((polygon) => {
                 polygonShema.push(server.create('polygon', { ...polygon }));
+               
             });
-            polygonData.forEach((polygon) => {
-                polygonShema.push(server.create('polygon', { ...polygon }));
-            });
+            
+            console.log("server.js", polygonShema)
+            // polygonData.forEach((polygon) => {
+            //     polygonShema.push(server.create('polygon', { ...polygon }));
+            // });
 
             userData.forEach((user) => {
                 server.create('user', { ...user });
@@ -55,8 +62,9 @@ export default function (initialPolygons = []) {
 
             this.post('/api/polygons', (schema, request) => {
                 const attrs = JSON.parse(request.requestBody);
-
-                return schema.create('polygon', attrs);
+            // Добавляем ID, если его нет
+            if (!attrs.id) attrs.id = String(schema.all('polygon').length + 1);
+            return schema.create('polygon', attrs);
             })
 
             this.delete('/api/polygons/:id', (schema, request) => {
